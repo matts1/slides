@@ -49,5 +49,10 @@ slides = [
 print(int('3') * 5) # input is '3'
 print(3 * 5) # int('3') is 3
 print(15) # 3 * 5 = 15"""),
+    ]),
+
+    Slide("Out of the shell", [
+        "Now that you know input and output, you no longer need to use the shell, because you can now make actual programs",
+        "Open up a new window in your IDLE. You can hit F5 to run whatever program you're writing"
     ])
 ]

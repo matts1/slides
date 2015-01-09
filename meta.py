@@ -29,7 +29,7 @@ whypython = BulletSlide("Why Python",[
     "Python is concise, simple, and easy to learn",
     "It doesn't have some of the more complex things that other languages do such as fixed data types, variable declaration, etc.",
     "It has very broad uses. I have wrote websites, made tools, and created programming languages with python. I even made this slide show with python",
-    "Python is a programming language. Some of you may know markup languages such as HTML. They will teach you syntax, but are not dynamic, and won't allow you to execute anything."
+#    "Python is a programming language. Some of you may know markup languages such as HTML, and think you know programming. They will teach you syntax, but are not dynamic, and won't allow you to execute anything."
 ])
 
 installpython = BulletSlide("Installing Python", [
@@ -46,9 +46,9 @@ installpython = BulletSlide("Installing Python", [
 ])
 
 section = [
-    ("Lesson Structure", "Lessons",
-        [lessoninfo, whatis, whatisnt]
-    ),
+#    ("Lesson Structure", "Lessons",
+#        [lessoninfo, whatis, whatisnt]
+#    ),
     ("Python",
         [whypython, installpython]
     )
