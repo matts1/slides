@@ -10,6 +10,8 @@ if [ $? -eq 0 ]
     cd ..
 #    sh clean.sh
     mv compiled/lesson.pdf .
-    xdg-open lesson.pdf
+    xdg-open lesson.pdf & # run in the background
 #    rm data.txt executing.py
 fi
+
+./clean.sh

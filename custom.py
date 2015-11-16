@@ -1,3 +1,5 @@
+import os
+
 from latexslides import Code as OldCode, Content
 from subprocess import Popen, PIPE
 
@@ -15,9 +17,10 @@ class Code(OldCode):
 
 class ShellCode(Code):
     mode = "shell"
-    def __init__(self, code='', data="", file=False, language="python3", fontsize=r'\footnotesize', linenos=False,
+
+    def __init__(self, code='', data="", fromfile=False, language="python3", fontsize=r'\footnotesize', linenos=False,
                  mathescape=True, **kwargs):
-        code = open(code, "rU").read() if file else code
+        code = open(code, "rU").read() if fromfile else code
         f = open("executing.py", "w")
         f.write(code.strip("\n"))
         f.close()
@@ -26,6 +29,9 @@ class ShellCode(Code):
         f.close()
         code = Popen(["python3", "executor.py", self.mode], stdout=PIPE).communicate()[0]
         super(ShellCode, self).__init__(code, False, language, fontsize, linenos, mathescape, **kwargs)
+
+        os.remove("data.txt")
+        os.remove("executing.py")
 
 
 class ExecCode(Code):
