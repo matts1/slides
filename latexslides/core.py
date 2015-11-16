@@ -283,12 +283,15 @@ class Code(Content):
 
     def __str__(self):
         return str(self._ltx)
+
     def __repr__(self):
         return repr(self._ltx)
+
     def __add__(self, other):
         if isinstance(other, Text):
             raise TypeError, 'Cannot add Code and Text, use comma'
         return self._ltx + other
+
     def __radd__(self, other):
         if isinstance(other, Text):
             raise TypeError, 'Cannot add Code and Text, use comma'

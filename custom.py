@@ -5,6 +5,7 @@ from subprocess import Popen, PIPE
 class Code(OldCode):
     def __init__(self, code='', file=False, language="python3", fontsize=r'\footnotesize', linenos=False, mathescape=True, **kwargs):
         style = dict(python3="idleclassic", python="idleclassic").get(language, "default")
+        style = "default" # TODO: get this working without this
         kwargs.update(fontsize=fontsize, linenos=linenos, mathescape=mathescape, numberblanklines=True)
         kwargs = ",".join(["%s=%s" % (key, value) for key, value in kwargs.items()])
         code = open(code, "rU").read() if file else code
